@@ -5,7 +5,7 @@ final class VRMValidatorTests: XCTestCase {
 
     static var validAddresses: [String] = [
         //== Valid Current Style ==
-        "AB51ABCaaaaa111121dscdc",
+        "AB51ABC",
         //== Valid Prefix ==
         "A123ABC",
         "A12ABC",
