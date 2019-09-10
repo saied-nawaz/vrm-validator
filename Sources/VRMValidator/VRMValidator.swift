@@ -1,7 +1,7 @@
 import Foundation
 
 public class VRMValidator {
-    
+
     static let vrmRegExArray = [
         "(?<Current>^[A-Z]{2}[0-9]{2}[A-Z]{3}$)",
         "(?<Prefix>^[A-Z][0-9]{1,3}[A-Z]{3}$)",
@@ -11,18 +11,16 @@ public class VRMValidator {
         "(?<DatelessLongNumberSuffix>^[A-Z]{1,2}[0-9]{1,4}$)",
         "(?<DatelessShortNumberSuffix>^[A-Z]{1,3}[0-9]{1,3}$)",
         "(?<DatelessNorthernIreland>^[A-Z]{1,3}[0-9]{1,4}$)",
-        "(?<DiplomaticPlate>^[0-9]{3}[DX]{1}[0-9]{3}$)",
+        "(?<DiplomaticPlate>^[0-9]{3}[DX]{1}[0-9]{3}$)"
     ]
-    
 
-    
     public class func validate(vrm: String) -> Bool {
-    
+
         //if it's empty or has more than 8 characters
         if vrm.isEmpty || vrm.count >= 8 {
             return false
         }
-        
+
         var matched = false
         for regEx in vrmRegExArray {
             let vrmTest = NSPredicate(format: "SELF MATCHES %@", regEx)
@@ -31,7 +29,7 @@ public class VRMValidator {
                 return true
             }
         }
-        
+
         return matched
     }
 }

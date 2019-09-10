@@ -2,7 +2,7 @@ import XCTest
 @testable import VRMValidator
 
 final class VRMValidatorTests: XCTestCase {
-    
+
     static var validAddresses: [String] = [
         //== Valid Current Style ==
         "AB51ABCaaaaa111121dscdc",
@@ -28,7 +28,7 @@ final class VRMValidatorTests: XCTestCase {
         "ABC1234",
         //== Valid Diplomatic ==
         "101D234",
-        "123X456",
+        "123X456"
     ]
 
     static var invalidAddresses: [String] = [
@@ -96,9 +96,9 @@ final class VRMValidatorTests: XCTestCase {
         "123A456",
         //- Extra numbers -
         "1234D567",
-        "123X4567",
+        "123X4567"
     ]
-    
+
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -121,6 +121,6 @@ final class VRMValidatorTests: XCTestCase {
 
     static var allTests = [
         ("Valid Tests", testValidAddresses),
-        ("Invalid Tests", testInvalidAddresses),
+        ("Invalid Tests", testInvalidAddresses)
     ]
 }
