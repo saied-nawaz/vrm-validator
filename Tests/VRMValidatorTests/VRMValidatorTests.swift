@@ -28,7 +28,10 @@ final class VRMValidatorTests: XCTestCase {
         "ABC1234",
         //== Valid Diplomatic ==
         "101D234",
-        "123X456"
+        "123X456",
+        //== Valid With Spaces ==
+        "AB51 ABC",
+        "A123 ABC"
     ]
 
     static var invalidAddresses: [String] = [

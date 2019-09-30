@@ -16,15 +16,16 @@ public class VRMValidator {
 
     public class func validate(vrm: String) -> Bool {
 
+        let cleanVrm = vrm.removingWhitespaces().uppercased()
         //if it's empty or has more than 8 characters
-        if vrm.isEmpty || vrm.count >= 8 {
+        if cleanVrm.isEmpty || cleanVrm.count >= 8 {
             return false
         }
 
         var matched = false
         for regEx in vrmRegExArray {
             let vrmTest = NSPredicate(format: "SELF MATCHES %@", regEx)
-            matched = vrmTest.evaluate(with: vrm.removingWhitespaces().uppercased())
+            matched = vrmTest.evaluate(with: cleanVrm.uppercased())
             if matched == true {
                 return true
             }
@@ -36,6 +37,6 @@ public class VRMValidator {
 
 extension String {
     func removingWhitespaces() -> String {
-        return trimmingCharacters(in: .whitespacesAndNewlines)
+        return components(separatedBy: .whitespaces).joined()
     }
 }
